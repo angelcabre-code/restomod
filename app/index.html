@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Restomod OS - Control</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <button id="connectBtn" class="btn primary-btn" style="padding: 0.4rem 0.8rem; width: auto; font-size: 0.75rem;">CONECTAR</button>
+        <div id="statusText" class="status-pill offline">OFFLINE</div>
+    </header>
+
+    <main id="controls" class="disabled">
+        <section class="card">
+            <div class="telemetry-grid" id="telemetryData">
+                <div class="tel-item"><div class="tel-val">--</div><div class="tel-lbl">Altitud</div></div>
+                <div class="tel-item"><div class="tel-val">--</div><div class="tel-lbl">Temp</div></div>
+                <div class="tel-item"><div class="tel-val">--</div><div class="tel-lbl">G-Force</div></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <div class="grid-2">
+                    <select id="leftWidget">
+                        <option value="7">Retro</option>
+                        <option value="1">Moderno</option>
+                    </select>
+                    <select id="themeSelect">
+                        <option value="-1" disabled selected>Temas</option>
+                        <option value="0">Cyberpunk</option>
+                        <option value="1">Matrix</option>
+                        <option value="2">Synth</option>
+                        <option value="3">Día</option>
+                        <option value="4">G. Oscuro</option>
+                        <option value="5">G. Claro</option>
+                        <option value="6">Rejilla Verde</option>
+                        <option value="7">Puntos Soft</option>
+                        <option value="8">P. Gold</option>
+                        <option value="9">Ámbar</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 0.5rem;">
+                    <button id="applyFontBtn" class="btn secondary-btn" style="flex: 2;">APLICAR ESTILO</button>
+                    <button id="syncTimeBtn" class="btn secondary-btn" style="flex: 1;">TIME</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <select id="bgModeSelect" style="width: 100%;">
+                    <option value="0">Sólido</option>
+                    <option value="1">Deg. Oscuro</option>
+                    <option value="2">Deg. Claro</option>
+                    <option value="3">Rejilla</option>
+                    <option value="4">Puntos</option>
+                </select>
+                
+                <div class="grid-2">
+                    <div>
+                        <div class="tel-lbl" style="margin-bottom: 0.2rem;">Texto</div>
+                        <div class="color-picker" id="primaryPicker">
+                            <button class="color-btn active" data-color="255,255,255" style="background: #fff;"></button>
+                            <button class="color-btn" data-color="0,255,0" style="background: #0f0;"></button>
+                            <button class="color-btn" data-color="255,200,0" style="background: #fc0;"></button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="tel-lbl" style="margin-bottom: 0.2rem;">Gráficos</div>
+                        <div class="color-picker" id="accentPicker">
+                            <button class="color-btn" data-color="255,0,0" style="background: #f00;"></button>
+                            <button class="color-btn" data-color="0,255,255" style="background: #0ff;"></button>
+                            <button class="color-btn" data-color="255,0,255" style="background: #f0f;"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
